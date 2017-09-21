@@ -1,0 +1,23 @@
+{
+  "name": "webpack-react-setup",
+  "version": "1.0.0",
+  "description": "webpack setup for react project",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-Pratik/webpack-react-setup.git"
+  },
+  "keywords": [
+    "wepack",
+    "react"
+  ],
+  "author": "Pratik Bhurewar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/B-Pratik/webpack-react-setup/issues"
+  },
+  "homepage": "https://github.com/B-Pratik/webpack-react-setup#readme"
+}
