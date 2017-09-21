@@ -19,5 +19,45 @@
   "bugs": {
     "url": "https://github.com/B-Pratik/webpack-react-setup/issues"
   },
-  "homepage": "https://github.com/B-Pratik/webpack-react-setup#readme"
+  "homepage": "https://github.com/B-Pratik/webpack-react-setup#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "base64-font-loader": "0.0.4",
+    "bootstrap": "^3.3.7",
+    "bootstrap-loader": "^2.2.0",
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap-sass-loader": "^1.0.10",
+    "css-loader": "^0.28.7",
+    "del": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "gulp": "^3.9.1",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "opener": "^1.4.3",
+    "postcss-loader": "^2.0.6",
+    "precss": "^2.0.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "resolve-url-loader": "^2.1.0",
+    "run-sequence": "^2.2.0",
+    "sass-loader": "^6.0.6",
+    "scss-loader": "0.0.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0",
+    "yargs": "^9.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "serve-favicon": "^2.4.4",
+    "serve-static": "^1.12.4"
+  }
 }

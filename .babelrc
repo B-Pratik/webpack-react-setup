@@ -1,0 +1,25 @@
+{
+	"presets": [
+		[
+			"env",
+			{
+				"es2015": {
+					"modules": false
+				},
+				"targets": {
+					"browsers": [
+						"last 2 versions",
+						"safari >= 7"
+					]
+				}
+			}
+		],
+		[
+			"react"
+		]
+	],
+	"plugins": [
+		"transform-decorators-legacy",
+		"transform-class-properties"
+	]
+}
