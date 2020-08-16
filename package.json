@@ -27,7 +27,8 @@
   ],
   "eslintConfig": {
     "env": {
-      "browser": true
+      "browser": true,
+      "node": true
     },
     "globals": {
       "Promise": true
@@ -83,6 +84,7 @@
     "webpack": "^4.44.0",
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "workbox-webpack-plugin": "^5.1.3"
   }
 }

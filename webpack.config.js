@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { GenerateSW } = require("workbox-webpack-plugin");
 //const Dotenv = require("dotenv-webpack");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 //   .BundleAnalyzerPlugin;
@@ -42,6 +43,10 @@ module.exports = {
       inject: "body",
       scriptLoading: "defer",
       favicon: "./assets/favicon.ico",
+    }),
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
     }),
     // enable if needed, add .env file also
     //new Dotenv({ systemvars: true }),
