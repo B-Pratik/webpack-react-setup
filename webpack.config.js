@@ -2,6 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { GenerateSW } = require("workbox-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //const Dotenv = require("dotenv-webpack");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 //   .BundleAnalyzerPlugin;
@@ -19,7 +21,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           { loader: "css-loader", options: { importLoaders: 1 } },
           "postcss-loader",
         ],
@@ -38,6 +40,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "./index.html",
       inject: "body",
@@ -65,6 +68,8 @@ module.exports = {
     historyApiFallback: true,
   },
   optimization: {
+    minimize: true,
+    minimizer: [new CssMinimizerPlugin()],
     moduleIds: "hashed",
     splitChunks: {
       cacheGroups: {
