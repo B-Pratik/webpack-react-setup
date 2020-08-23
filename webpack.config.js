@@ -9,13 +9,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //   .BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: ["./pollyfill.js", "./src/index.js"],
   mode: "development",
   output: {
-    filename: "[hash].main.js",
+    filename: "[contenthash].main.js",
     path: path.resolve(__dirname, "build"),
+    ecmaVersion: 5,
     publicPath: "/",
   },
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -32,7 +34,17 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-react"],
+            babelrc: false,
+            presets: [
+              "@babel/preset-react",
+              [
+                "@babel/preset-env",
+                {
+                  useBuiltIns: "entry",
+                  corejs: { version: 3, proposals: true },
+                },
+              ],
+            ],
           },
         },
       },
@@ -59,6 +71,7 @@ module.exports = {
     contentBase: path.join(__dirname, "build"),
     https: true,
     compress: true,
+    overlay: true,
     hot: true,
     port: 8080,
     open: true,
@@ -69,14 +82,18 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [new CssMinimizerPlugin()],
-    moduleIds: "hashed",
+    minimizer: [new CssMinimizerPlugin(), "..."],
     splitChunks: {
+      maxSize: 220000,
+      minSize: 100000,
+      minChunks: 1,
       cacheGroups: {
-        vendor: {
+        defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
           name: "vendors",
           chunks: "all",
+          reuseExistingChunk: true,
+          priority: -10,
         },
       },
     },
